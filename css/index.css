@@ -4042,7 +4042,7 @@ strong {
 
 @font-face {
   font-family: 'MoonieEyes';
-  src: url('/fonts/MoonieEyes.otf') format('opentype');
+  src: url('https://gryfenderr.github.io/portfolio/fonts/MoonieEyes.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -5054,6 +5054,7 @@ strong {
 }
 
 /* certif end */
+
 
 
 
