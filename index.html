@@ -1,0 +1,1510 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boyer Benjamin - Projets" />
+	<meta name="keywords" content="creative, responsive, projets, sio, bts" />
+	<meta name="author" content="Boyer Benjamin" />
+    <title>| Boyer Benjamin |</title>
+    
+    <!--BB-img--> 
+    <link rel="icon" type="image/png" href="images/BBM.png">
+    <!--BB-img-->
+    
+    <!--main css file should not be removed -->
+    <link rel="stylesheet" href="css/index.css">
+    
+    <!--main css file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="/js/main.js"></script>
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+    attribute float size;
+    attribute vec3 customColor;
+    varying vec3 vColor;
+
+    void main() {
+
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+        gl_PointSize = size * ( 300.0 / -mvPosition.z );
+        gl_Position = projectionMatrix * mvPosition;
+
+    }
+
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+
+    uniform vec3 color;
+    uniform sampler2D pointTexture;
+
+    varying vec3 vColor;
+
+    void main() {
+
+    gl_FragColor = vec4( color * vColor, 1.0 );
+    gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+    }
+    </script>
+</head>
+<body>
+    <!--contains all the div-->
+    <div id="all">
+    
+    <!--mouse  follower-->
+    <div class="cursor"></div>
+    <!--mouse  follower-->
+    
+    <!--loader-->
+    <div id="loader">
+        
+        <span class="color">Benjamin</span>Boyer 
+        <div class="spinner-container">
+            <div class="spinner">
+             <div class="spinner">
+              <div class="spinner">
+                <div class="spinner">
+                  <div class="spinner">
+                      <div class="spinner"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+    <!--loader-end-->
+     
+    <!--link-screen-->
+    <div id="breaker"></div>
+    <div id="breaker-two"></div>
+    <!--link-screen-->
+
+    <!--Main-Section-->
+        <!--Navigator-fullscreen-->
+        <div id="navigation-content">
+            <div class="logo">
+                <img src="images/BB.png" alt="logo">
+            </div>
+            <div class="navigation-close">
+                <span class="close-first"></span>
+                <span class="close-second"></span>
+            </div>
+            <div class="navigation-links">
+                <a href="#" data-text="ACCUEIL" id="home-link" >ACCUEIL</a>
+                <a href="#" data-text="REALISATIONS" id="blog-link" >MES REALISATIONS</a>
+                <a href="#" data-text="PARCOURS" id="portfolio-link" >MON PARCOURS</a>
+                <a href="#" data-text="VEILLE" id="veille-link" >VEILLE INFORMATIONNELLE</a>
+                <a href="#" data-text="CERTTIFICATIONS" id="certif-link" >CERTTIFICATIONS</a>
+                <a href="#" data-text="ABOUT" id="about-link" >ABOUT</a>
+                <a href="#" data-text="CONTACT" id="contact-link" >CONTACT</a>
+            </div>
+        </div>
+        <!--Navigator-Fullscreen END-->
+        
+        <!--Home Page-->
+            <!--Menubar-->
+            <div id="navigation-bar">
+                <a href= "/portfolio/benjamin" ><img src="images/BB.png" alt="logo"></a>
+                <div class="menubar">
+                    <span class="first-span"></span>
+                    <span class="second-span"></span>
+                    <span class="third-span"></span>
+                </div>
+            </div>
+            <!--Menubar End-->
+
+            <!--Header-->
+            <div id="header">
+                <div id="particles"></div>
+
+                <!--Social Media Links-->
+                <div class="social-media-links">
+                    <!-- <a href="#"><img src="images/facebook logo.png" class="social-media" alt="facebook-logo"></a>
+                    <a href="#"><img src="images/linkedin logo.png" class="social-media" alt="linkedin-logo"></a> -->
+                    <a target="_blank" href="https://www.instagram.com/gryfend3r_135/"><img src="images/instagram logo.png" class="social-media" alt="instagram-logo"></a>
+                    <a target="_blank" href="https://discordapp.com/users/695235819249729536"><img src="images/discord.png" class="social-media" alt="discord-logo"></a>
+                    <a target="_blank" href="https://www.tiktok.com/@gryfender_135?lang=fr"><img src="images/tiktok.png" class="social-media" alt="tiktok-logo"></a>
+                    <a target="_blank" href="https://x.com/Gryfend3r"><img src="images/x.png" class="social-media" alt="x-logo"></a>
+                    <!-- <a target="_blank" href="https://steamcommunity.com/profiles/76561199143702293"><img src="images/steam.png" class="social-media" alt="steam-logo"></a> -->
+
+                </div>
+                <!--Social Media Links end-->
+
+                <div class="header-content">
+                    <!-- <div class="all-wrap">  
+            <div class="all">
+                <div class="yarn"></div>
+                <div class="cat-wrap">    
+                <div class="cat">
+                    <div class="cat-upper">
+                    <div class="cat-leg"></div>
+                    <div class="cat-leg"></div>
+                    <div class="cat-head">
+                        <div class="cat-ears">
+                        <div class="cat-ear"></div>
+                        <div class="cat-ear"></div>
+                        </div>
+                        <div class="cat-face">
+                        <div class="cat-eyes"></div>
+                        <div class="cat-mouth"></div>
+                        <div class="cat-whiskers"></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="cat-lower-wrap">
+                    <div class="cat-lower">
+                        <div class="cat-leg">
+                        <div class="cat-leg">
+                            <div class="cat-leg">
+                            <div class="cat-leg">
+                                <div class="cat-leg">
+                                <div class="cat-leg">
+                                    <div class="cat-leg">
+                                    <div class="cat-leg">
+                                        <div class="cat-leg">
+                                        <div class="cat-leg">
+                                            <div class="cat-leg">
+                                            <div class="cat-leg">
+                                                <div class="cat-leg">
+                                                <div class="cat-leg">
+                                                    <div class="cat-leg">
+                                                    <div class="cat-leg">
+                                                        <div class="cat-paw"></div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="cat-leg">
+                        <div class="cat-leg">
+                            <div class="cat-leg">
+                            <div class="cat-leg">
+                                <div class="cat-leg">
+                                <div class="cat-leg">
+                                    <div class="cat-leg">
+                                    <div class="cat-leg">
+                                        <div class="cat-leg">
+                                        <div class="cat-leg">
+                                            <div class="cat-leg">
+                                            <div class="cat-leg">
+                                                <div class="cat-leg">
+                                                <div class="cat-leg">
+                                                    <div class="cat-leg">
+                                                    <div class="cat-leg">
+                                                        <div class="cat-paw"></div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="cat-tail">
+                        <div class="cat-tail">
+                            <div class="cat-tail">
+                            <div class="cat-tail">
+                                <div class="cat-tail">
+                                <div class="cat-tail">
+                                    <div class="cat-tail">
+                                    <div class="cat-tail">
+                                        <div class="cat-tail">
+                                        <div class="cat-tail">
+                                            <div class="cat-tail">
+                                            <div class="cat-tail">
+                                                <div class="cat-tail">
+                                                <div class="cat-tail">
+                                                    <div class="cat-tail">
+                                                    <div class="cat-tail -end"></div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div> -->
+                     <img id="fleche" src="images/fleche-unscreen.gif" alt="">
+                    <p class="graffiti-text" id="naviguer">Naviguer</p>
+                    <p class="graffiti-text" id="ici">Ici</p>
+                    <div class="header-content-box">
+                        <div class="firstline">
+                            <div id="magic"></div>
+                                <div class="playground">
+                                    <div class="bottomPosition">
+                                </div>
+                            </div>
+                            <!--<div id="sansAnimation"><span class="color">Benjamin </span>Boyer</div> -->
+                        </div>
+                        <div class="secondline">
+                            Sur ce site, vous retrouverez mes
+                            <span class="txt-rotate color" data-period="1200" data-rotate='[ " projets.", " réalisations.", " compétences." ]'></span>
+                            <span class="slash">|</span>
+                        </div>
+                        <div class="contact">
+                            <a href="Mailto:benjamin.mika.boyer@gmail.com"><img src="images/mail.png" alt="email-pic" class="contactpic"></a>
+                            <a href="Tel:+262693558878"><img src="images/call.png" alt="phone-pic" class="contactpic"></a>
+                        </div>    
+                    </div>
+                    <!-- <div class="buttons">
+                        <button id="seven" class="button blob-btn">
+                          Besoin d'aide ?
+                          <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                            </span>
+                          </span>
+                        </button>
+                        <br/>
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <defs>
+                                <filter id="goo">
+                                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                                <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div> -->
+
+                    <div id="modal-container">
+                        <div class="modal-background">
+                          <div class="modal">
+                            <h2>I'm a Modal</h2>
+                            <p>Hear me roar.</p>
+                            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+                                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            
+                <!--header image-->
+                <div class="header-image">
+                    <img src="images/man.jpg" alt="logo">
+                </div>
+                <!--header image end-->
+            </div>
+            <!--Header End-->
+        <!--HomePage End-->
+    <!--Main-Section End-->
+
+        <!--about-->
+        <div id="about">
+            <div class="color-changer">
+            <div class="color-panel">
+                <img src="images/gear.png" alt="">
+            </div>
+            <div class="color-selector">
+                <div class="heading">Custom Colors</div>
+                <div class="colors">
+                    <ul >
+                    <li>
+                        <a href="#0" class="color-red " title="color-red"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-purple" title="color-purple"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-malt" title="color-malt"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-green" title="color-green"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-blue" title="color-blue"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-orange" title="color-orange"></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <!--about content-->
+            <div id="about-content">
+                <div class="about-header box box_down">
+                    À Propos de <span class="color">moi</span>
+                    <span class ="header-caption">Get to Know <span class="color"> me.</span></span>
+                </div>
+                <div class="about-main">
+                    <div class="about-first-paragraph wow box box_right">
+                        <span class="about-first-line">
+                            I'm a
+                            <span class="color">web developer</span>
+                            based in Saint-Denis, La Reunion </span>
+                            <br>
+                        <span class="about-second-line"> Sur ce site je montrerai mes réalisations.</span>
+                    </div>
+                        
+                    <!--about picture-->
+                    <div class="about-img box box_left">
+                        <img src="images/gamer1.png" alt="Your Image">
+                    </div>
+                    <!-- <div class="about-img box box_left">
+                        <img src="images/gamer2.png" alt="Your Image">
+                    </div> -->
+                </div>
+            </div>
+
+            <!--services start-->
+            <div id="services">
+                <div class="color-changer">
+                    <div class="color-panel">
+                        <img src="images/gear.png" alt="">
+                    </div>
+                    <div class="color-selector">
+                        <div class="heading">Custom Colors</div>
+                        <div class="colors">
+                            <ul >
+                            <li>
+                                <a href="#0" class="color-red " title="color-red"></a>
+                            </li>
+                            <li>
+                                <a href="#0" class="color-purple" title="color-purple"></a>
+                            </li>
+                            <li>
+                                <a href="#0" class="color-malt" title="color-malt"></a>
+                            </li>
+                            <li>
+                                <a href="#0" class="color-green" title="color-green"></a>
+                            </li>
+                            <li>
+                                <a href="#0" class="color-blue" title="color-blue"></a>
+                            </li>
+                            <li>
+                                <a href="#0" class="color-orange" title="color-orange"></a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--services header-->
+                    <div class="services-heading wow box box_down">
+                        <span class="color">My</span> Services
+                    </div>
+                <!--services header end-->
+
+                <!--services content-->
+                <div class="services-content">
+                    <div class="service-one service wow box box_down">
+                        <div class="service-img">
+                            <img src="images/coding.png" alt="service-one">
+                        </div>
+                        <div class="service-description">
+                            <h2>Web Designing</h2>
+                            <p>Développe tout type de site avec une efficacité à toutes épreuves</p>
+                        </div>
+                    </div>
+                    <div class="service-three service wow box box_up">
+                        <div class="service-img">
+                            <img src="images/bulb.png" alt="service-three">
+                        </div>
+                        <div class="service-description">
+                            <h2>Creative Design</h2>
+                            <p>Propose des solutions ainsi que des designs créatifs et innovants</p>
+                        </div>
+                    </div>
+                    <div class="service-two service wow box box_down">
+                        <div class="service-img">
+                            <img src="images/languages.png" alt="service-two">
+                        </div>
+                        <div class="service-description">
+                            <h2>Multi-languages </h2>
+                            <p>Parle plusieurs langues notamment l'Anglais avec un niveau correct (B1). Apprend également le Japonais</p>
+                        </div>
+                    </div>
+                </div>
+                <!--services content end-->
+            </div>
+            <!--services end-->
+
+            <div id="skills">
+                <div class="skills-header box box_down">
+                    My <span class="color"> Skills</span>
+                </div>
+                <div class="skills-content " style="text-align: center;">
+                    <div class="skill-html skill box box_right">
+                        <div class="skill-text">
+                            <div class="html">
+                                HTML/CSS
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="html-progress wow">95%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_left">
+                        <div class="skill-text">
+                            <div class="html">
+                                Javascript
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="js-progress wow">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_right">
+                        <div class="skill-text">
+                            <div class="html">
+                                Adobe Ps / Pr
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="adobe-progress wow">83%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_left">
+                        <div class="skill-text">
+                            <div class="html">
+                                PHP
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="php-progress wow">87%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_right">
+                        <div class="skill-text">
+                            <div class="html">
+                                SQL / DataBases
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="mysql-progress wow">60%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_left">
+                        <div class="skill-text">
+                            <div class="html">
+                                Python
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="python-progress wow">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_right">
+                        <div class="skill-text">
+                            <div class="html">
+                                Suites Offices
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="office-progress wow">70%</div>
+                        </div>
+                    </div>
+                    <div class="skill-html skill box box_left">
+                        <div class="skill-text">
+                            <div class="html">
+                                C Language
+                            </div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="c-progress wow">25%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- hobbies header -->
+            <div class="hobbies-heading wow box box_down">
+                My <span class="color">Hobbies</span>
+            </div>
+            <!-- hobbies header end -->
+
+
+            <!-- hobbies content -->
+                <div class="hobbies-content">
+                    <a alt="" class="wow box box_right">
+                        <div class="card">
+                            <div class="wrapper">
+                                <img src="images/programmeur.png" class="cover-image" />
+                            </div>
+                            <img src="images/informatique-ecriture.png" class="title" />
+                            <img src="images/programmeur-hover.gif" class="character" />
+                        </div>
+                    </a>
+                    <a alt="" class="wow box box_down">
+                        <div class="card">
+                            <div class="wrapper">
+                                <img src="images/games.png" class="cover-image" />
+                            </div>
+                            <img src="images/games-ecritures.png" class="title" />
+                            <img src="images/games-hover.png" class="character" />
+                        </div>
+                    </a>
+                    <a alt="" class="wow box box_left">
+                        <div class="card">
+                            <div class="wrapper">
+                                <img src="images/mangas.png" class="cover-image" />
+                            </div>
+                            <img src="images/mangas-ecritures.png" class="title" />
+                            <img src="images/mangas-hover.png" class="character" />
+                        </div>
+                    </a>
+                    <a alt="" class="wow box box_right">
+                        <div class="card">
+                            <div class="wrapper">
+                                <img src="images/japon.png" class="cover-image" />
+                            </div>
+                            <img src="images/japon-ecritures.png" class="title" />
+                            <img src="images/japon-hover.png" class="character" />
+                        </div>
+                    </a>
+                    <a alt="" class="wow box box_left">
+                        <div class="card">
+                            <div class="wrapper">
+                                <img src="images/sports.png" class="cover-image" />
+                            </div>
+                            <img src="images/sports-ecritures.png" class="title" />
+                            <img src="images/sports-hover.png" class="character" />
+                        </div>
+                    </a>
+                </div>
+            <!-- hobbies content end -->
+
+            
+            <!-- cv header -->
+            <div class="hobbies-heading wow box box_down">
+                My <span class="color">CV</span>
+                <span class ="header-caption"> ( Pas encore à jour )</span>
+            </div>
+            <!-- cv header end -->
+
+
+            <!-- cv content -->
+            <!-- <div class="cv-content" style="text-align: center;">
+                <div class="button btn_cv">
+                    <button type="button" class="btn">
+                        <strong>Mon CV</strong>
+                        <div id="container-stars">
+                        <div id="stars"></div>
+                        </div>
+                    
+                        <div id="glow">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        </div>
+                    </button>
+                </div>
+                <br><br><br>
+                <object class="cv_doc hidden" data="cv.pdf" type="application/pdf" width="50%" height="1200px"></object>
+                <br><br><br><br><br>
+            </div> -->
+            <!-- cv content end -->
+
+            <!--copyright-section You Can Remove After Downloading-->
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Boyer Benjamin | <a href="mentions_legales.html"">Mentions Légales</a>
+                </div>
+            </div>
+            <!--copyright-section-->
+        </div>
+        <!--about end-->
+
+
+
+
+        <!--portfolio-->
+        <div id="portfolio">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="images/gear.png" alt="">
+                </div>
+                <div class="color-selector">
+                    <div class="heading">Custom Colors</div>
+                    <div class="colors">
+                        <ul >
+                        <li>
+                            <a href="#0" class="color-red " title="color-red"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-purple" title="color-purple"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-malt" title="color-malt"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-green" title="color-green"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-blue" title="color-blue"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-orange" title="color-orange"></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-header box box_down"> <span class="color"> My </span> Portfolio
+                <!-- <span class ="header-caption"> Some Of My <span class="color"> Works</span></span> -->
+            </div>
+            <div id="portfolio-content">
+                 <div class="portfolio portfolio-first box box_1">
+                    <div class="portfolio-image">
+                       <img src="images/School.png" alt="portfolio-first">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Mon parcours scolaire</h2>
+                        <p>Du collège à la fin de mon BTS, tout est détaillé ! Que ce soit mes spécialités choisies ou même mes options, vous pouvez tout savoir !</p>
+                        <div class="button friseA_btn"><a><button><span class="index"> Développer<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+
+                <div class="friseA hidden">
+                    <ul class="f">
+                        <li class="f" style="--accent-color:#41516C">
+                            <div class="date">2015 - 2019</div>
+                            <div class="title"><span class="color">Collège</span></div>
+                            <div class="descr">Années de la 6ème à la 3ème, au collège de Bois De Nèfles, 97400 St Denis</div>
+                        </li>
+                        <li class="f" style="--accent-color:#FBCA3E">
+                            <div class="date">2019 - 2020</div>
+                            <div class="title"><span class="color">Seconde</span></div>
+                            <div class="descr">Seconde générale au lycée Mémona Hintermann-Afféjee (Ex lycée Nord), option SI (Science de l'ingénieur), Bois De Nèfles, 97400 St Denis</div>
+                        </li>
+                        <li class="f" style="--accent-color:#E24A68">
+                            <div class="date">2020 - 2021</div>
+                            <div class="title"><span class="color">Première</span></div>
+                            <div class="descr">Première générale, spécialités Maths, Physique-Chimie, NSI (Numérique et Science Informatique), option Cinéma Audiovisuel, au lycée Mémona Hintermann-Afféjee (Ex lycée Nord), Bois De Nèfles, 97400 St Denis</div>
+                        </li>
+                        <li class="f" style="--accent-color:#1B5F8C">
+                            <div class="date">2021 - 2022</div>
+                            <div class="title"><span class="color">Terminale</span></div>
+                            <div class="descr">Terminale générale, spécialités Maths, NSI (Numérique et Science Informatique), option Cinéma Audiovisuel, au lycée Mémona Hintermann-Afféjee (Ex lycée Nord), Bois De Nèfles, 97400 St Denis</div>
+                        </li>
+                        <li class="f" style="--accent-color:#4CADAD">
+                            <div class="date">2022 - 2023</div>
+                            <div class="title"><span class="color">École d'ingénieur</span></div>
+                            <div class="descr">Première année à l'école d'ingénieur ISEN Yncréa Ouest, spécialité CIR (Cycle Informatique et Réseau), 44470 Carquefou, Nantes</div>
+                        </li>
+                        <li class="f" style="--accent-color:#41516C">
+                            <div class="date">2023 - 2024</div>
+                            <div class="title"><span class="color">BTS SIO</span></div>
+                            <div class="descr">Première année en BTS SIO (Service Informatique aux Organisations) au lycée Marguerite Jauzelon (Ex Bellepierre), spécialité SLAM (Solutions Logicielles et Applications Métier), Bellepierre, 97400 St Denis</div>
+                        </li>
+                        <li class="f" style="--accent-color:#FBCA3E">
+                            <div class="date">2024 - 2025</div>
+                            <div class="title"><span class="color">BTS SIO</span></div>
+                            <div class="descr">Deuxième année en BTS SIO (Service Informatique aux Organisations) en alternance chez BeeTechnology, spécialité SLAM (Solutions Logicielles et Applications Métier), Bellepierre, 97400 St Denis</div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                
+                <div class="portfolio portfolio-second box box_2">
+                   <div class="portfolio-image">
+                       <img src="images/portfolio-second.jpg" alt="portfolio-second">
+                   </div>
+                   <div class="portfolio-text">
+                       <h2>Mon parcours professionnel</h2>
+                       <p>Ici est détaillé mon parcours professionnel, c'est-à-dire mes stages et années d'alternance</p>
+                       <div class="button friseB_btn"><a><button><span class="index"> Développer<i class="gg-arrow-right"></i></span></button></a></div>
+                   </div>
+                </div>
+
+                <div class="friseB hidden">
+                    <ul class="f">
+                        <li class="f" style="--accent-color:#41516C">
+                            <div class="date">25 Février – 1er Mars 2019</div>
+                            <div class="title"><span class="color">Stage de 3ème</span></div>
+                            <div class="descr">J'ai effectué mon stage de 3ème (stage d'observation) au sein de la DSI (Direction des Systèmes d'informations) de la Région Réunion, dans le bâtiment derrière la pyramide inversée. <br>
+                                                J'ai vu pas mal de services différents mais c'est surtout à ce moment-là que j'ai appris et commencé à coder en HTML & CSS !</div>
+                        </li>
+                        <li class="f" style="--accent-color:#FBCA3E">
+                            <div class="date">30 Mai 2024 - 3 Juillet 2024</div>
+                            <div class="title"><span class="color">Stage SIO 1</span></div>
+                            <div class="descr">Mon premier stage muni de projets concrets et innovants. <br>
+                                                Je l'ai fait au sein de BeeTechnology, une entreprise de téléphonie IP présente un peu partout sur l'Île. <br>
+                        </li>
+                        <li class="f" style="--accent-color:#E24A68">
+                            <div class="date">1er Septembre 2024 - 31 Août 2025</div>
+                            <div class="title"><span class="color">Alternance</span></div>
+                            <div class="descr">Suite à mon stage de SIO 1, j'ai émis ma volonté de vouloir passer ma deuxième année de BTS en alternance, et BeeTechnology y a répondu favorablement !</div>
+                        </li>
+                        <!-- <li class="f" style="--accent-color:#1B5F8C">
+                            <div class="date">Date</div>
+                            <div class="title"><span class="color">Titre</span></div>
+                            <div class="descr">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, vero quae odio qui eveniet nam numquam error voluptate. Deserunt corrupti provident quia ea atque voluptatum. Facilis aliquam recusandae quisquam? Non.</div>
+                        </li> -->
+                        <!-- <li class="f" style="--accent-color:#4CADAD">
+                            <div class="date">Date</div>
+                            <div class="title"><span class="color">Titre</span></div>
+                            <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ipsa consectetur atque quibusdam? Illum, beatae! Quibusdam, deserunt corrupti voluptates accusamus aliquam, suscipit modi doloremque nemo impedit cum obcaecati esse? Nesciunt!</div>
+                        </li> -->
+                    </ul>
+                </div>
+             
+
+
+                <div class="portfolio portfolio-third box box_3">
+                    <div class="portfolio-image">
+                        <img src="images/portfolio-third.jpg" alt="portfolio-third">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Soutenance BTS SIO</h2>
+                        <p>Il s'agit de la soutenance que j'ai dû présenter dans le cadre d'examen de mon BTS en SIO</p>
+                        <div class="button"><a target="_blank" href="soutenance.html"><button><span class="index">S'y rendre<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- <div class="portfolio portfolio-fourth box box_4">
+                    <div class=" portfolio-image">
+                        <img src="images/portfolio-fourth.jpg" alt="portfolio-fourth">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Présentation SIO 2</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ut optio repellat cupiditate
+                             expedita eius dignissimos. Id cumque placeat minima ad laudantium suscipit voluptatem ducimus</p>
+                        <div class="button"><a><button class="btn_prjct"><span class="index"> View Project<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div> -->
+
+
+                <!-- <div class="portfolio portfolio-fourth box box_4">
+                    <div class=" portfolio-image">
+                        <img src="images/portfolio-fourth.jpg" alt="portfolio-fourth">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Wow Graphics</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ut optio repellat cupiditate
+                             expedita eius dignissimos. Id cumque placeat minima ad laudantium suscipit voluptatem ducimus</p>
+                        <div class="button"><a><button><span class="index"> View Project<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div> -->
+            </div>
+
+            <!--copyright-section You Can Remove After Downloading-->
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Boyer Benjamin | <a href="mentions_legales.html"">Mentions Légales</a>
+                </div>
+            </div>
+            <!--copyright-section-->
+        </div>
+        <!--portfolio end-->
+
+
+
+
+        <!--blog-->
+        <div id="blog">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="images/gear.png" alt="">
+                </div>
+                <div class="color-selector">
+                    <div class="heading">Custom Colors</div>
+                    <div class="colors">
+                        <ul >
+                        <li>
+                            <a href="#0" class="color-red " title="color-red"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-purple" title="color-purple"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-malt" title="color-malt"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-green" title="color-green"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-blue" title="color-blue"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-orange" title="color-orange"></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="blog-header">Projets Scolaires</span>
+            <span class ="header-caption"> À <span class="color"> l'école.</span></span>
+        </div>
+        <div class="blog-content">
+            
+            <div class="blogs">
+                <a href="ProjetPotion">
+                <div class="img">
+                    <img src="ProjetPotion/Images/potionsWallpaper.png" alt="blog-six">
+                    <div class="blog-date">28 Feb,19</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Guide des Potions</h3>
+                    <p>Projet réalisé en une semaine pendant mon BTS SIO 1 - Semestre 2. <br> 
+                        Dans le célèbre jeu vidéo Minecraft, il est possible de créer des potions, bien souvent compliqué, en voici un guide</p>
+                </div></a>
+            </div>
+            
+            <div class="blogs">
+                <a href="SiteBibliotheque">
+                <div class="img">
+                    <img src="SiteBibliotheque/images/BAP_Livres.jpg" alt="IMG Biblio">
+                    <div class="blog-date">2 Sept,24</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Bibliothèque</h3>
+                    <p>Travail efféctué en cours de BTS SIO. <br> 
+                        Dans le contexte d'une bibliothèque, il permet de calculé le montant de cotisation selon des règles très spécifiques.</p>
+                </div></a>
+            </div>
+            
+            <div class="blogs">
+                <a href="Chess">
+                <div class="img">
+                    <img src="images/UnderConstruct.png" alt="IMG Biblio">
+                    <div class="blog-date">? ?,?</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Echecs</h3>
+                    <p>Réalisation d'un jeu d'Echec avec Python, dans le cadre d'un projet en cours de NSI (Terminale).</p>
+                </div></a>
+            </div>
+            
+            <div class="blogs">
+                <a href="Hangman/">
+                <div class="img">
+                    <img src="images/UnderConstruct.png" alt="IMG Pendu">
+                    <div class="blog-date">? ?,?</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Pendu</h3>
+                    <p>Réalisation d'un Pendu avec Python, dans le cadre d'un projet en cours de NSI (Première).</p>
+                </div></a>
+            </div>
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/post-two.jpg" alt="blog-two">
+                    <div class="blog-date">16 Jan,20</div>
+                </div>
+                <div class="blog-text">
+                    <h3>MS2R</h3>
+                    <p>Conception d'un site gestionnaire de club de sport (contexte LRT / MS2R)</p>
+                </div></a>
+            </div>
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/gsb.png" alt="blog-three">
+                    <div class="blog-date">Mars 2025</div>
+                </div>
+                <div class="blog-text">
+                    <h3>GSB - VB.net</h3>
+                    <p>Conception d'une application sur client lourd de gestionnaire de compagnie maritime (Contexte Océanix - VB.NET</p>
+                </div></a>
+            </div>
+
+            <!-- <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/post-three.jpg" alt="blog-three">
+                    <div class="blog-date">30 Nov,19</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Caffeine Addict</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo nostrum impedit 
+                        ipsam perspiciatis ratione sapiente quasi optio reprehenderit, labore consequuntur suscipit cum quas.
+                        Officiis dolorem asperiores, ut necessitatibus quas doloremque?</p>
+                </div></a>
+            </div> -->
+
+            <!-- <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/post-four.jpg" alt="blog-four">
+                    <div class="blog-date">6 Jul,19</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Web Development</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, veniam ratione quam vitae,
+                        quibusdam explicabo rem debitis velit ipsa repellat, impedit nulla fuga? Amet corporis praesentium quae.
+                        Sed, quibusdam necessitatibus.</p>
+                </div></a>
+            </div>   -->
+
+            <!-- <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/post-five.jpg" alt="blog-five">
+                    <div class="blog-date">1 Jun,19</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Work From Home</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sunt eum necessitatibus rem 
+                        dignissimos nulla mollitia cumque, provident officiis non vitae? Animi aut doloremque illum, soluta hic minus 
+                        sint explicabo..</p>
+                </div></a>
+            </div>   -->
+            
+            <!-- <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/post-six.jpg" alt="blog-six">
+                    <div class="blog-date">28 Feb,19</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Business Trip</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo tempora dolorum fuga ratione, unde, 
+                        ex quaerat iste numquam nemo nihil nobis rem sint quia recusandae dignissimos quos ut rerum nam.</p>
+                </div></a>
+            </div> -->
+        </div>
+        
+
+
+        <div class="blog-header"> Projets professionnels</span>
+            <span class ="header-caption"> En <span class="color"> Première</span> année</span>
+        </div>
+        <div class="blog-content">
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/logoVOIP-2.png" alt="blog-two">
+                    <div class="blog-date">Juin 2024</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Bee Search</h3>
+                    <p>Affichage de données d'un fichier csv sur interface Web</p>
+                </div></a>
+            </div>
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/Trame.png" alt="blog-two">
+                    <div class="blog-date">Juin 2024</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Trame SIP</h3>
+                    <p>Affichage de trame SIP sur interface Web</p>
+                </div></a>
+            </div>
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/Install.png" alt="blog-two">
+                    <div class="blog-date">Juin 2024</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Interventions</h3>
+                    <p>Interventions/Installation de matériel chez des client</p>
+                </div></a>
+            </div>
+
+            <!-- <div class="blogs">
+                <a href="BeeSearch">
+                <div class="img">
+                    <img src="images/UnderConstruct.png" alt="blog-two">
+                    <img src="images/BeeSearchSite.png" alt="blog-two">
+                    <div class="blog-date">15 Dec,24</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Bee Search</h3>
+                    <p>Le site démo</p>
+                </div></a>
+            </div> -->
+        </div>
+
+        
+        <div class="blog-header"> - ~ - ~ - ~ - ~ - ~ - ~ - </span>
+            <span class ="header-caption"> En <span class="color"> Seconde</span> année</span>
+        </div>
+        <div class="blog-content">
+
+            <div class="blogs">
+                <a href="SiteBeeSearch/beesearch.php">
+                <div class="img">
+                    <img src="images/logoVOIP-2.png" alt="blog-two">
+                    <div class="blog-date">Decembre 2024</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Bee Stats</h3>
+                    <p>Création d'un interpréteur Web de fichier scv complexes</p>
+                </div></a>
+            </div>
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/guides.png" alt="blog-two">
+                    <div class="blog-date">Juin 2024</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Guides</h3>
+                    <p>Conception de Guides utilisateur</p>
+                </div></a>
+            </div>
+
+            <div class="blogs">
+                <a href="#">
+                <div class="img">
+                    <img src="images/Install.png" alt="blog-two">
+                    <div class="blog-date">Decembre 2024</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Interventions</h3>
+                    <p>Interventions/Installation de matériel chez des client</p>
+                </div></a>
+            </div>
+
+            <!-- <div class="blogs">
+                <a href="BeeSearch">
+                <div class="img">
+                    <img src="images/UnderConstruct.png" alt="blog-two">
+                    <img src="images/BeeSearchSite.png" alt="blog-two">
+                    <div class="blog-date">15 Dec,24</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Bee Search</h3>
+                    <p>Le site démo</p>
+                </div></a>
+            </div> -->
+        </div>
+
+        
+        <div class="blog-header">Projets Personnels</span>
+            <span class ="header-caption"> Pendant mon <span class="color"> temps libre.</span></span>
+        </div>
+        <div class="blog-content">
+            
+            <div class="blogs">
+                <a href="/moulatown/frontend">
+                <div class="img">
+                    <img src="images/logoMT_Original.jpg" alt="blog-two">
+                    <div class="blog-date">10 Fev,25</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Moula Town</h3>
+                    <p>Jeu, inspiré du très célèbre Monopoly©, Moula Town est un jeu de plateforme évolutif. Dans Moula Town, acheter des terrains agrandira le plateau. <br>
+                        Pour le moment, ce projet n'en ai encore qu'à sa phase de développement</p>
+                </div></a>
+            </div>
+            
+            <div class="blogs">
+                <a href="Snake">
+                <div class="img">
+                    <img src="images/UnderConstruct.png" alt="Img Snake">
+                    <div class="blog-date">? ?,?</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Snake Python</h3>
+                    <p>Reproduction du très célèbre jeu snake en utilisant le langage Python.</p>
+                </div></a>
+            </div>
+            
+            <div class="blogs">
+                <a href="Checkers">
+                <div class="img">
+                    <img src="images/UnderConstruct.png" alt="Img Dames">
+                    <div class="blog-date">? ?,?</div>
+                </div>
+                <div class="blog-text">
+                    <h3>Jeu de Dame</h3>
+                    <p>Repoduction d'un jeu de Dame avec Python.</p>
+                </div></a>
+            </div>
+        </div>
+
+        
+
+        <div class="footer">
+            <div class="footer-text">
+                <img src="./images/BB.png" alt="copyright-img" class="images" height="14px"> Boyer Benjamin | <a href="mentions_legales.html"">Mentions Légales</a>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!--blog end-->
+
+
+
+        <!--contact-->
+        <div id="contact">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="images/gear.png" alt="">
+                </div>
+                <div class="color-selector">
+                    <div class="heading">Custom Colors</div>
+                    <div class="colors">
+                        <ul >
+                        <li>
+                            <a href="#0" class="color-red " title="color-red"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-purple" title="color-purple"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-malt" title="color-malt"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-green" title="color-green"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-blue" title="color-blue"></a>
+                        </li>
+                        <li>
+                            <a href="#0" class="color-orange" title="color-orange"></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-header">Contact <span class="color"> Me</span>
+                <div class="contact-header-caption"> <span class="color"> Get</span> In Touch.</div>
+            </div>
+            <div class="contact-content">
+            
+            <!--Contact form-->
+            <div class="contact-form">
+                <div class="form-header">
+                    Message Me
+                </div>
+                <form id="myForm" action="lib/mailto.php" method="post">
+                   <div class="input-line">
+                       <input  id="name" type="text" placeholder="Name" class="input-name" name="name" required>
+                       <input id="email" type="email" placeholder="Mail"  class="input-name" name="mail" required>
+                   </div>
+                   <input type="text" id="subject" placeholder="Subject" class="input-subject" name="subject" required>
+                   <textarea id ="body" class="input-textarea" placeholder="Message" name="message" required></textarea>
+                   <button type="submit" id ="submit" value="send">Submit</button>
+                </form>
+            </div>
+            <!--Contact form-->
+
+            <!--Contact information-->
+             <div class="contact-info">
+                <div class="contact-info-header">
+                    Contact Info
+                </div>
+                <div class="contact-info-content">
+                <div class="contect-info-content-line">
+                    <img src="./images/icon-name.png" class="icon" alt="name-icon">
+                    <div class="contact-info-icon-text">
+                        <h6>Name</h6>
+                        <p>Boyer Benjamin</p>
+                  </div>
+                </div>
+                <div class="contect-info-content-line">
+                  <img src="./images/icon-location.png" class="icon" alt="location-icon">
+                  <div class="contact-info-icon-text">
+                      <h6>Location</h6>
+                      <p>Saint Denis, La Réunion, France</p>
+                </div>
+              </div>
+              <!-- <div class="contect-info-content-line">
+                  <img src="./images/icon-phone.png" class="icon" alt="phone-icon">
+                  <div class="contact-info-icon-text">
+                      <h6>Call</h6>
+                      <p>+262 693 55 88 78</p>
+                </div>
+              </div> -->
+              
+              <div class="contect-info-content-line">
+                  <img src="./images/icon-email.png" class="icon" alt="email-icon">
+                  <div class="contact-info-icon-text">
+                      <h6>Mail</h6>
+                      <p>benjamin@areatech.fr</p>
+                </div>
+              </div>
+            </div>
+            <!--Contact information end-->
+           </div>
+        </div>
+                    <!--copyright-section You Can Remove After Downloading-->
+                    <div class="footer">
+                        <div class="footer-text">
+                            <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Boyer Benjamin | <a href="mentions_legales.html"">Mentions Légales</a>
+                        </div>
+                       </div>
+               <!--copyright-section-->
+     </div>
+    <!--contact end-->
+
+    
+    <!-- veille start -->
+    <div id="veille">
+        <div class="color-changer">
+            <div class="color-panel">
+                <img src="images/gear.png" alt="">
+            </div>
+            <div class="color-selector">
+                <div class="heading">Custom Colors</div>
+                <div class="colors">
+                    <ul >
+                    <li>
+                        <a href="#0" class="color-red " title="color-red"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-purple" title="color-purple"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-malt" title="color-malt"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-green" title="color-green"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-blue" title="color-blue"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-orange" title="color-orange"></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="blog-header">Veille Informationnelle : <br><span class="color">Intelligence Artificielle et Développement</span></div>
+        <hr><br><br>
+        <h3>🔹 Thème de veille</h3>
+        <p>
+            <span class="color">L’intégration de l’intelligence artificielle dans les environnements de développement (IDE)</span> :
+            GitHub Copilot, ChatGPT, CodeWhisperer, etc.
+        </p><br><br>
+
+        <h3>🔹 Objectif de la veille</h3>
+        <p>
+            Suivre l’évolution des <span class="color">outils d’aide à la programmation basés sur l’IA</span> et comprendre leur impact
+            sur le métier de développeur, tant en termes de productivité que de nouvelles compétences.
+        </p><br><br>
+
+        <h3>🔹 Outils de veille utilisés</h3>
+        <p>
+            <ul>
+                <li><span class="color">Feedly</span> : agrégateur RSS pour suivre ZDNet, GitHub Blog, etc.</li>
+                <li><span class="color">Google Alertes</span> : alertes sur "Copilot", "IA développeur", "ChatGPT IDE"</li>
+                <li><span class="color">YouTube</span> : chaînes comme Fireship, Graphikart</li>
+                <li><span class="color">LinkedIn</span> : publications des pros de GitHub, JetBrains, etc.</li>
+                <li><span class="color">Medium</span> : retours d’expérience de développeurs</li>
+            </ul>
+        </p><br><br>
+
+        <h3>🔹 Synthèse</h3>
+        <p>
+            Depuis 2023, l’intelligence artificielle s’est largement imposée dans les environnements de développement,
+            grâce à des outils comme <span class="color">GitHub Copilot</span>, <span class="color">ChatGPT</span> ou <span class="color">Amazon CodeWhisperer</span>.
+            Ces assistants intelligents sont capables de générer du code, d’expliquer des erreurs, de documenter
+            automatiquement les fonctions, et de proposer des tests unitaires.
+            Leur objectif : <span class="color">accélérer la productivité</span> tout en simplifiant certaines tâches techniques.
+            <br><br>
+            Les développeurs adoptent massivement ces outils : en 2024, plus de 70 % d’entre eux déclarent les utiliser ou vouloir
+            les intégrer dans leur travail quotidien. Leur impact est notable, notamment dans le <span class="color">gain de temps</span> et la
+            <span class="color">réduction de la charge mentale</span> sur les tâches répétitives.
+            Toutefois, ces IA ne remplacent pas les développeurs : elles nécessitent une <span class="color">supervision humaine</span>, ainsi que
+            de <span class="color">nouvelles compétences</span> comme la rédaction de prompts efficaces ou la relecture critique du code généré.
+            <br><br>
+            L’intégration de ces IA pose également des <span class="color">questions éthiques et juridiques</span> : la propriété du code généré,
+            la confidentialité des données utilisées pour entraîner les modèles, ou encore le respect du <span class="color">RGPD</span>.
+            Ces enjeux doivent être pris en compte pour une utilisation professionnelle responsable.
+            <br><br>
+            En résumé, l’IA représente une <span class="color">évolution majeure du métier de développeur</span>, qu’il est essentiel d’anticiper
+            pour rester compétent, efficace et responsable dans un environnement technologique en constante mutation.
+        </p><br><br>
+
+        <h3>🔹 Intérêt professionnel</h3>
+        <p>
+            En tant que futur développeur, cette veille m’aide à comprendre les <span class="color">outils que j’utiliserai au quotidien</span>,
+            à suivre les bonnes pratiques, et à me préparer à un métier qui évolue rapidement avec l’intelligence artificielle.
+        </p><br><br>
+
+        <h3>🔹 Limites et enjeux juridiques</h3>
+        <p>
+            - <span class="color">Propriété intellectuelle</span> : à qui appartient le code généré par une IA ?<br>
+            - <span class="color">Confidentialité</span> : attention aux données sensibles utilisées avec les IA en ligne<br>
+            - <span class="color">RGPD</span> : obligation de transparence si l’IA collecte ou traite des données personnelles
+        </p>
+        <br><br>
+        <!--copyright-section You Can Remove After Downloading-->
+        <div class="footer">
+            <div class="footer-text">
+                <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Boyer Benjamin | <a href="mentions_legales.html"">Mentions Légales</a>
+            </div>
+        </div>
+        <!--copyright-section-->
+    </div>
+    <!-- veille end -->
+
+
+
+
+    <!-- certif start -->
+    <div id="certif">
+        <div class="color-changer">
+            <div class="color-panel">
+                <img src="images/gear.png" alt="">
+            </div>
+            <div class="color-selector">
+                <div class="heading">Custom Colors</div>
+                <div class="colors">
+                    <ul >
+                    <li>
+                        <a href="#0" class="color-red " title="color-red"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-purple" title="color-purple"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-malt" title="color-malt"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-green" title="color-green"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-blue" title="color-blue"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-orange" title="color-orange"></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="blog-header">Certifications</span></div>
+        
+        <div class="certif-container">
+
+            <div class="certif-pix-container">
+                <h2>Certification PIX</h2>
+                <div class="pix-badge-zone">
+                    <div class="pix-badge">
+                    <div class="pix-hexagon">
+                        <svg viewBox="0 0 100 100" class="hex-border">
+                        <polygon points="50,1 95,25 95,75 50,99 5,75 5,25" />
+                        </svg>
+                        <div class="pix-hex-content">
+                        <span class="pix-label">PIX</span>
+                        <span class="pix-score">507</span>
+                        <span class="pix-max">/ 895</span>
+                        </div>
+                    </div>
+                    <span class="pix-niveau">Indépendant 2</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="certif-rootme-container">
+                <h2>Root-Me</h2>
+                <div class="rootme-terminal">
+                    <div class="rootme-line typewriter">
+                    > rootme --stats
+                    </div>
+                    <div class="rootme-line">
+                    ✔ Challenges réussis : <span class="highlight">8</span>
+                    </div>
+                    <div class="rootme-line">
+                    ✔ Score total : <span class="highlight">90 pts</span>
+                    </div>
+                    <div class="rootme-line">
+                    ✔ Statut : <span class="highlight">Actif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+
+
+        <!--copyright-section You Can Remove After Downloading-->
+        <div class="footer">
+            <div class="footer-text">
+                <img src="./images/copyright.png" alt="copyright-img" class="images" height="14px"> Boyer Benjamin | <a href="mentions_legales.html"">Mentions Légales</a>
+            </div>
+        </div>
+        <!--copyright-section-->
+    </div>
+
+    <!-- certif end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!--all the divisions-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/index.js"></script>
+    <!--particles script-->
+<script>
+    particlesJS("particles", {"particles":{"number":{"value":60,"density":{"enable":true,"value_area":800}},"color":{"value":"#fff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":7,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":500,"color":"#ffffff","opacity":0.4,"width":2},"move":{"enable":true,"speed":3,"direction":"bottom","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":0.5}},"bubble":{"distance":400,"size":4,"duration":0.3,"opacity":1,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+</script>
+
+</body>
+</html>
